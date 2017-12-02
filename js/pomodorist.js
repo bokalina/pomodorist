@@ -1,14 +1,8 @@
-var totalTime = 61;
+var totalTime = 1500;
 var minutes = document.getElementById("minutes");
 var seconds = document.getElementById("seconds");
 var x;
 
-// function isNegative(num) {
-//     if (isNaN(num)) {
-//         return false;
-//     }
-//     return Math.min(num, 0) != 0;
-// }
 
 function count() {
     var mins = Math.floor(totalTime / 60);
@@ -19,13 +13,15 @@ function count() {
     // console.log(totalTime)
     // debugger;
     if (totalTime === 0) {
+        var audio = document.getElementById("alert")
+        audio.play();
         stop();
         message.innerHTML = "Your work time is over, take a break";
     }
 }
 
 function start() {
-    x = setInterval(count, 100);
+    x = setInterval(count, 1000);
 }
 
 function stop() {
