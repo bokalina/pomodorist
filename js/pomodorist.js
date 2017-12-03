@@ -15,8 +15,10 @@ function count() {
     if (totalTime === 0) {
         var audio = document.getElementById("alert")
         audio.play();
+        var animation = document.getElementById("clock");
+        animation.play();
         stop();
-        message.innerHTML = "Your work time is over, take a break";
+        
     }
 }
 
