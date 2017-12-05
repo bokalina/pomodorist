@@ -3,18 +3,14 @@ var minutes = document.getElementById("minutes");
 var seconds = document.getElementById("seconds");
 var x;
 var message = "";
+var n;
 
 function count() {
+    // debugger;
     var mins = Math.floor(totalTime / 60);
-    var secs = totalTime - mins * 60;
-    minutes.innerHTML = mins;
-    seconds.innerHTML = secs;
-    if (mins < 10) {
-        var message = "0": "mins";
-    }
-    if (secs < 10) {
-        var message = "0": "secs";
-    }
+    var secs = Math.floor(totalTime % 60);
+    minutes.innerHTML = (Math.floor(totalTime / 60) < 10 ? "0" : "") + mins;
+    seconds.innerHTML = (Math.floor(totalTime % 60) < 10 ? "0" : "") + secs;
     totalTime--;
     // console.log(totalTime)
     // debugger;
@@ -24,7 +20,6 @@ function count() {
         var animation = document.getElementById("clock");
         animation.play();
         stop();
-
     }
 }
 
